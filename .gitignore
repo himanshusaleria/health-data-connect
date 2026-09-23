@@ -5,6 +5,8 @@ dist/
 build/
 *.egg-info/
 .dev.vars
-google_client.json
-google_tokens.json
 .env
+# User tokens must NEVER be committed. The embedded package client
+# (src/health_data_connect/google_client.json) is a public Desktop client
+# and IS committed deliberately — do not add it here.
+google_tokens.json
