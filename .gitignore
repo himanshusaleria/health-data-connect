@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+dist/
+build/
+*.egg-info/
+.dev.vars
+google_client.json
+google_tokens.json
+.env
