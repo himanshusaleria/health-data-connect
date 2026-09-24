@@ -39,6 +39,6 @@ covering daily activity/fitness reads, and no non-restricted scope exposes it.
   storage of Google user data.
 - Tokens are stored only in the user's local config directory (`~/.config/health-data-connect/`),
   file-permission `0600`.
-- Homepage and privacy policy are served at <DOMAIN> (see `site/index.html`, `site/privacy.html`).
+- Homepage and privacy policy are served at https://himanshusaleria.github.io/health-data-connect/ (see `site/index.html`, `site/privacy.html`).
 - Only the two scopes above are requested; more will be added (with justifications) only as new
   read-only metrics ship.

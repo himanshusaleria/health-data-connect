@@ -11,7 +11,7 @@ shows the app under review — not the placeholder.
 
 ## Shot list
 
-1. **Intro (15s).** On the homepage (<DOMAIN>): "This is health-data-connect, a local,
+1. **Intro (15s).** On the homepage (https://himanshusaleria.github.io/health-data-connect/): "This is health-data-connect, a local,
    open-source tool that lets you ask your own AI assistant about your Fitbit / Google Health
    data. It runs entirely on your machine and stores nothing on any server."
 
