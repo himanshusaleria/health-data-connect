@@ -20,8 +20,15 @@ def _cmd_auth() -> int:
     try:
         setup_google_auth()
     except TokenRefused as e:
+        # Raised for a missing/malformed client file.
         print(e, file=sys.stderr)
         return 1
+    except SystemExit as e:
+        # Upstream reports consent denial / timeout / no-refresh-token by
+        # printing to stderr and calling sys.exit(1). Own that as our own
+        # non-zero return instead of letting it short-circuit the process,
+        # and never fall through to the success message.
+        return e.code if isinstance(e.code, int) else 1
     print("\nConnected. Register with your MCP client:\n  " + REGISTER_CMD)
     return 0
 
