@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>health-data-connect</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+           line-height: 1.6; max-width: 42rem; margin: 3rem auto; padding: 0 1.25rem; }
+    h1 { font-size: 1.9rem; margin-bottom: 0.25rem; }
+    .tag { color: #666; margin-top: 0; }
+    code { background: rgba(127,127,127,.15); padding: .15em .4em; border-radius: 4px; }
+    pre { background: rgba(127,127,127,.12); padding: 1rem; border-radius: 8px; overflow-x: auto; }
+    footer { margin-top: 3rem; font-size: .9rem; color: #666; }
+    a { color: #2563eb; }
+  </style>
+</head>
+<body>
+  <h1>health-data-connect</h1>
+  <p class="tag">Connect your Fitbit / Google Health data to a local AI assistant — in one command.</p>
+
+  <p>
+    <strong>health-data-connect</strong> lets you talk to your own wearable health data
+    (sleep, activity, heart rate, and more) inside a local MCP client such as Claude Code or
+    Claude Desktop. You connect your Google account once; nothing is set up on your side beyond
+    a single command.
+  </p>
+
+  <h2>How it works</h2>
+  <pre>uvx health-data-connect auth</pre>
+  <p>
+    This opens Google's consent screen, where you grant <strong>read-only</strong> access to your
+    own health data. Your access tokens and data stay <strong>on your device</strong> — this
+    project operates <strong>no server</strong> and never receives your health data.
+  </p>
+
+  <h2>Your privacy</h2>
+  <p>
+    We access only read-only health scopes, only to answer your own questions locally. See the
+    full <a href="privacy.html">privacy policy</a>. You can revoke access at any time at
+    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+  </p>
+
+  <footer>
+    Questions or issues: <a href="mailto:ashish@qaby.ai">ashish@qaby.ai</a>.
+  </footer>
+</body>
+</html>
