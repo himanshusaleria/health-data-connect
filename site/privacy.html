@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — health-data-connect</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+           line-height: 1.6; max-width: 42rem; margin: 3rem auto; padding: 0 1.25rem; }
+    h1 { font-size: 1.7rem; }
+    a { color: #2563eb; }
+    .updated { color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p class="updated">health-data-connect</p>
+
+  <h2>What we access</h2>
+  <p>
+    With your consent, health-data-connect requests <strong>read-only</strong> access to your
+    Google Health data (such as activity and fitness, sleep, and heart-rate metrics) via Google's
+    Health API. It never requests write access and never accesses your location.
+  </p>
+
+  <h2>Where your data goes</h2>
+  <p>
+    All access happens locally. Your OAuth tokens and any health data fetched are stored and
+    processed <strong>on your device</strong> only. This application runs
+    <strong>no server</strong>: we <strong>do not operate</strong> any backend, and your health
+    data and tokens are never transmitted to us or to any third party. We never see, collect,
+    store, or share your data.
+  </p>
+
+  <h2>How your data is used</h2>
+  <p>
+    Data is read solely to answer questions you ask in your own local AI assistant. It is not used
+    for advertising, analytics, profiling, or any other purpose, and it is not sold.
+  </p>
+
+  <h2>Revoking access</h2>
+  <p>
+    Run <code>uvx health-data-connect disconnect</code> to delete the local tokens, and revoke the
+    grant entirely at
+    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+  </p>
+
+  <h2>Contact</h2>
+  <p>Questions: <a href="mailto:ashish@qaby.ai">ashish@qaby.ai</a>.</p>
+</body>
+</html>
