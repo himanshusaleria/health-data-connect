@@ -9,7 +9,7 @@ description = "Connect your Fitbit/Google Health data to a local MCP client in o
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
-dependencies = ["mcp>=1.2.0"]
+dependencies = ["mcp>=1.2.0,<2"]
 
 [project.scripts]
 health-data-connect = "health_data_connect.cli:main"
