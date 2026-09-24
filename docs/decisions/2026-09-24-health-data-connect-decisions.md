@@ -36,3 +36,12 @@ Chronological record of the non-obvious choices made building this project. Form
 - **Product framing** → *"like the tool the user installed (google-health-mcp), but marketed well + multi-device."* → Differentiator is go-to-market + multi-provider, not the raw API access.
 - **Superseded:** `src/health_data_connect/` (the wrapper + `ensure_client` around google-health-mcp) will be replaced by a direct-API implementation; kept in git history.
 
+## 2026-09-24 — Direct-API build rulings
+
+- **MCP SDK pin** → *`mcp>=1.2.0,<2` (FastMCP API).* → The installed SDK is 2.x, where `FastMCP` became `MCPServer` with a changed API; pinning `<2` keeps the known-good, already-written code. → Cost: a later migration to mcp 2.x (parked todo, noted in `CLAUDE.md`).
+- **True-zero activity days** → *report `0` for a present rollup point whose value field is omitted* (steps/distance/floors/calories are Google-documented true-zero types) → matches the authoritative parsing; a genuine zero-activity day is data, not a gap. → Cost: none.
+- **Python floor** → *3.11* (down from the dependency-forced 3.13) → kills the `pip install` failure on the user's 3.12 machine.
+- **Scopes** → *sleep + activity read-only only* (least privilege for the first slice); add scopes before shipping more metrics (each omission = a user re-consent).
+- **Placeholder client is a known pre-publish gate**, not a defect — real credentials are injected at operator setup and the `RELEASE=1` release guard blocks publishing placeholders.
+- **Verification:** fresh Opus review confirmed the parsing is a faithful port of the reference (sleep night-binning, rollup date extraction, field names, unit conversions); 36 tests pass.
+
