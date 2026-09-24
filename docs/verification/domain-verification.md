@@ -2,8 +2,8 @@
 
 The site is live via GitHub Pages: **https://himanshusaleria.github.io/health-data-connect/**
 - Homepage: `/` · Privacy: `/privacy.html` · Terms: `/terms.html`
-- Source: the `gh-pages` branch (files at root, `.nojekyll`). To update, edit `site/*.html` on
-  `main`, then copy them onto `gh-pages` and push (or we automate later).
+- Source: **auto-deployed from `site/` on `main`** via `.github/workflows/pages.yml`. To update
+  the site, just edit `site/*.html` and push to `main` — the Action redeploys.
 
 ## What each launch stage needs
 
