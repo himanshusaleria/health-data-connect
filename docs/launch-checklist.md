@@ -46,7 +46,7 @@ Restricted health scopes → no getting around this for >100 users / removing th
 - [ ] **[You]** Launch timing / coordination.
 
 ## Track F — Support & ops
-- [ ] **[You]** Support email (ashish@qaby.ai works) + enable GitHub Issues when public.
+- [ ] **[You]** Support email (himanshusaleria@gmail.com works) + enable GitHub Issues when public.
 - [ ] **[Me]** FAQ / troubleshooting — esp. the "unverified app" screen and Fitbit→Google account migration.
 - [ ] **[You]** Decide on **privacy-respecting analytics/feedback** (likely none, or opt-in only).
 - [ ] **[Me]** OAuth-client **rotation / incident** runbook.
