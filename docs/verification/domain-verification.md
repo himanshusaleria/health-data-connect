@@ -1,6 +1,6 @@
 # Domain / site verification for OAuth
 
-The site is live via GitHub Pages: **https://himanshusaleria.github.io/health-data-connect/**
+The site is live via GitHub Pages: **https://health.himanshusaleria.com/**
 - Homepage: `/` · Privacy: `/privacy.html` · Terms: `/terms.html`
 - Source: **auto-deployed from `site/` on `main`** via `.github/workflows/pages.yml`. To update
   the site, just edit `site/*.html` and push to `main` — the Action redeploys.
@@ -10,9 +10,9 @@ The site is live via GitHub Pages: **https://himanshusaleria.github.io/health-da
 ### Now — unverified production (≤100 users)
 **No domain verification required.** The consent screen only needs working homepage + privacy
 URLs, which we now have. Put these in the OAuth consent screen:
-- Application home page: `https://himanshusaleria.github.io/health-data-connect/`
-- Privacy policy: `https://himanshusaleria.github.io/health-data-connect/privacy.html`
-- Terms of service: `https://himanshusaleria.github.io/health-data-connect/terms.html`
+- Application home page: `https://health.himanshusaleria.com/`
+- Privacy policy: `https://health.himanshusaleria.com/privacy.html`
+- Terms of service: `https://health.himanshusaleria.com/terms.html`
 
 ### Later — full verification (public / CASA)
 Google's brand verification wants an **authorized domain you own and have verified** in Search
@@ -26,7 +26,7 @@ a **custom domain**:
 
 ### Verifying the github.io site now (optional, for a URL-prefix property)
 If you want it verified before a custom domain: in Search Console add a **URL-prefix** property for
-`https://himanshusaleria.github.io/health-data-connect/`, choose **HTML file** verification, and
+`https://health.himanshusaleria.com/`, choose **HTML file** verification, and
 drop the `google<...>.html` file Google gives you onto the `gh-pages` branch root. (Meta-tag
 verification also works — add it to `index.html`.)
 
