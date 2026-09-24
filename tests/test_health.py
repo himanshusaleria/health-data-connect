@@ -53,3 +53,27 @@ def test_get_activity_assembles_days(monkeypatch):
     assert d["distance_km"] == 6.0
     assert d["floors"] == 12
     assert d["calories_out"] == 2200
+
+
+def test_get_activity_reports_true_zero_day(monkeypatch):
+    # A present rollup point whose value field is omitted is a measured zero for
+    # these true-zero types (steps/distance/floors/calories), not missing data.
+    def fake_rollup(type_path, start, end, cap_days=90):
+        if type_path == "steps":
+            return [{"civilStartTime": {"date": {"year": 2026, "month": 1, "day": 3}}, "steps": {}}]
+        return []
+
+    monkeypatch.setattr(api, "daily_roll_up", fake_rollup)
+    days = health.get_activity("2026-01-03", "2026-01-03")
+    assert days == [{"date": "2026-01-03", "steps": 0}]
+
+
+def test_get_activity_passes_calorie_cap_of_14(monkeypatch):
+    # Guards the wiring: total-calories must roll up in 14-day chunks, others in 90.
+    caps = {}
+    monkeypatch.setattr(
+        api, "daily_roll_up", lambda tp, s, e, cap_days=90: caps.__setitem__(tp, cap_days) or []
+    )
+    health.get_activity("2026-01-01", "2026-01-20")
+    assert caps["total-calories"] == 14
+    assert caps["steps"] == 90

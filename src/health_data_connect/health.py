@@ -117,6 +117,7 @@ def get_activity(start_date: str | None = None, end_date: str | None = None) -> 
             if day is None or not isinstance(payload, dict):
                 continue
             value = extract(payload)
-            if value is not None:
-                days.setdefault(day, {"date": day})[column] = value
+            # All four sources are Google "true-zero" types: a present point with
+            # the value field omitted is a measured zero, not missing data.
+            days.setdefault(day, {"date": day})[column] = value if value is not None else 0
     return [days[day] for day in sorted(days)]
