@@ -10,3 +10,5 @@ build/
 # (src/health_data_connect/data/google_client.json) is a public Desktop client
 # and IS committed deliberately — do not add it here.
 google_tokens.json
+.pypi.token
+.pypi_token
