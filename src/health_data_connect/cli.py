@@ -1,6 +1,8 @@
 """health-data-connect CLI: auth | serve | disconnect | register."""
 
 import argparse
+import shlex
+import subprocess
 import sys
 from pathlib import Path
 
@@ -44,12 +46,21 @@ def _cmd_disconnect() -> int:
     return 0
 
 
+def _cmd_register() -> int:
+    try:
+        subprocess.run(shlex.split(REGISTER_CMD))
+    except FileNotFoundError:
+        print("`claude` not found. Register manually with:\n  " + REGISTER_CMD)
+    return 0
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(prog="health-data-connect")
     sub = parser.add_subparsers(dest="cmd", metavar="COMMAND")
     sub.add_parser("auth", help="Connect your Google/Fitbit account (browser consent)")
     sub.add_parser("serve", help="Run the MCP server (stdio)")
     sub.add_parser("disconnect", help="Delete local tokens and show the revoke link")
+    sub.add_parser("register", help="Register this server with Claude Code")
     args = parser.parse_args(argv)
     if args.cmd == "auth":
         return _cmd_auth()
@@ -57,6 +68,8 @@ def main(argv=None) -> int:
         return _cmd_serve()
     if args.cmd == "disconnect":
         return _cmd_disconnect()
+    if args.cmd == "register":
+        return _cmd_register()
     parser.print_help()
     return 1
 
