@@ -1,10 +1,10 @@
-"""Place our shared, public Desktop OAuth client where google-health-mcp reads it."""
+"""Place our shared, public Desktop OAuth client where the auth flow reads it."""
 
 import os
 from importlib.resources import files
 from pathlib import Path
 
-from google_health_mcp import config
+from . import config
 
 
 def _bundled_client_bytes() -> bytes:
@@ -12,6 +12,7 @@ def _bundled_client_bytes() -> bytes:
 
 
 def ensure_client() -> Path:
+    """Write the embedded client into place if the user has none. Never clobbers."""
     target = Path(config.GOOGLE_CLIENT_PATH)
     if target.exists():
         return target

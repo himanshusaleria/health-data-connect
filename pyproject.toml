@@ -4,10 +4,12 @@ build-backend = "hatchling.build"
 
 [project]
 name = "health-data-connect"
-version = "0.1.0"
+version = "0.2.0"
 description = "Connect your Fitbit/Google Health data to a local MCP client in one command — no OAuth client id/secret of your own."
-requires-python = ">=3.13"
-dependencies = ["google-health-mcp"]
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["mcp>=1.2.0,<2"]
 
 [project.scripts]
 health-data-connect = "health_data_connect.cli:main"

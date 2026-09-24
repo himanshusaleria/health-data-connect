@@ -9,8 +9,9 @@ auth`.
 1. Create a **Google Cloud project**; enable the **Health API**.
 2. Configure the **OAuth consent screen**:
    - User type: **External**.
-   - Add the read-only `googlehealth.*` scopes (activity_and_fitness, sleep, heart, etc. — the
-     set `google-health-mcp` requests; all are *restricted* scopes).
+   - Add the read-only scopes the app uses (first slice): `googlehealth.sleep.readonly` and
+     `googlehealth.activity_and_fitness.readonly`. Both are *restricted* scopes. (Add more here
+     as we ship more metrics — a scope left out costs every user a re-consent.)
    - Fill app name, logo, support email, **homepage URL**, and **privacy-policy URL** (deploy
      `site/index.html` and `site/privacy.html`). Set these from day one — verification needs them.
    - Publish to **Production** (leave it unverified for now).
